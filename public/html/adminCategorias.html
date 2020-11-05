@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Catergorias, Rol: Administrador</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/printCategory.js"></script>
+    <script src="../js/getUser.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <script>
+        // Usamos la funcion getuser para obtener la información del usuario y añadimos al documento
+        $('body').append("<div id='roleuser'><p><b>  Rol: </b> Administrador</p>" +
+            "<p><b>Usuario: </b>" + getUser() + "</p></div>");
+    </script>
+    <div id="header">
+        <div id="appicon">
+            <img src="../icons/oicon.jpg">
+        </div>
+        <div id="logout">
+            <form action="../../index.html" method="post">
+                <button type="submit" class="btn btn-primary">Salir</button>
+            </form>
+        </div>
+        <div class="options">
+            <form id="generalform" action="adminGeneral.html" method="post">
+                <button id="enviog" type="submit" class="btn btn-primary">Tabla General</button>
+            </form>
+        </div>
+        <div class="options">
+            <form id="categoryform" action="./adminCategorias.html" method="post">
+                <button id="envioc" type="submit" class="btn btn-primary">Categorias</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <div id="loading" style="margin-top: 200px;" align='center'>
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading....</span>
+        </div>
+        <p>Cargando tabla, esto puede tardar unos minutos</p>
+    </div>
+
+
+    <div id="tablecat">
+
+    </div>
+
+    <script>
+        // Cambiamos el atributo action del formulario del cual se pulse el 
+        // boton con la función attrib, a su vez enviamos la información del usuario
+        // por medio del link para que pueda ser leida.
+        $('#enviog').click(function name() {
+            var urlgen = "./adminGeneral.html?user=" + getUser();
+            $('#generalform').attr('action', urlgen);
+        })
+        $('#envioc').click(function name() {
+            var urlgen = "./adminCategorias.html?user=" + getUser();
+            $('#categoryform').attr('action', urlgen);
+        })
+    </script>
+
+    <script>
+        // Leemos, organizamos e imprimimos la información usando la función printCategory
+        printCategory();
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+Usuarios de prueba:
+Rol: Administrador
+Usuario: Admin
+Contraseña: admin123
+Rol: Coordinador
+Usuario: Coord
+Contraseña: coord123

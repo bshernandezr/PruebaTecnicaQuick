@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Interfaz principal, rol: Coordinador</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="../js/getUser.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <script>
+        // Usamos la funcion getuser para obtener la información del usuario y añadimos al documento
+        $('body').append("<div id='roleuser'><p><b>  Rol: </b> Coordinador</p>" +
+            "<p><b>Usuario: </b>" + getUser() + "</p></div>");
+    </script>
+
+
+    <div id="header">
+        <div id="appicon">
+            <img src="../icons/oicon.jpg">
+        </div>
+        <div id="logout">
+            <form action="../../index.html" method="post">
+                <button type="submit" class="btn btn-primary">Salir</button>
+            </form>
+        </div>       
+    </div>
+
+
+
+    
+        <div id="mantenimiento">           
+                <img src="../image/maintance.jpg" width="400px" alt="Mantenimiento">
+                <p> <b> Estamos en mantenimiento por favor intente mas tarde</b> </p>            
+        </div>
+   
+        
+
+</body>
+
+</html>

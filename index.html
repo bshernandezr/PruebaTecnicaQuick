@@ -1,0 +1,61 @@
+<!-- Autor Brayan Hernandez--> 
+<!-- Pagina principal--> 
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login Juegos Olimpicos, base de datos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min
+.js"></script>
+    <link rel="stylesheet" href="public/css/styles.css">
+
+</head>
+
+<body>
+    <div id="header">
+        <div id="appicon">
+            <img src="public/icons/oicon.jpg">
+        </div>
+    </div>
+
+    <center>
+        <div id="loginbox">
+            <form id="logform" action="index.html" method="post">
+                <table>
+                    <tr>
+                        <td style="text-align: center;"><img src="public\icons\user.png" class="iconlogin">Usuario</td>
+                    </tr>
+                    <tr>
+                        <td><input class="inputForm" type="text" name="user" pattern="^[a-zA-Z][a-zA-Z0-9]*[._-]?[a-zA-Z0-9]+$" placeholder="Usuario"
+                            title="Solo estan permitidos los caracteres alfanumericos y los caracteres especiales '-','.','_'"  required='true'></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;"><img src="public\icons\pass.png" class="iconlogin">Contraseña</td>
+                    </tr>
+                    <tr>
+                        <td><input class="inputForm" type="password" name="pass" pattern="^[a-zA-Z][a-zA-Z0-9]*[._-]?[a-zA-Z0-9]+$"  placeholder="Password" required='true'
+                            title="Solo estan permitidos los caracteres alfanumericos y los caracteres especiales '-','.','_'"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;"> 
+                            <img src="./public/icons/rol.png" class="iconlogin">
+                            <b>Rol:</b>  <select name="role" style="width: 250px; text-align: center;">
+                            <option  value="Admin">Administrador</option>
+                            <option  value="Coord">Coordinador</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><button style="width: 300px;" id="envio" type="submit" class="btn btn-primary">Ingresar</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </center>
+    <script src="public/js/verifyLogin.js">
+    // ejecutamos el script de verificación de login
+    </script>
+</body>
+</html>

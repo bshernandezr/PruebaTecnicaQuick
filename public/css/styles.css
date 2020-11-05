@@ -1,0 +1,120 @@
+ /* Estilo para barra superior de navegación */ 
+#header {
+    display: block;
+    height: 100px;
+    background-color: cornflowerblue;
+}
+ /* Estilo para botones tabla de categorias */ 
+#Orobutton {
+    width: 20px;
+    height: 20px;
+    background-image: url("../icons/oro.png");
+    background-size: 15px 15px;
+}
+#goldheader{
+    width: 200px;
+    height: 200px;
+    background-image: url("../icons/oro.png");
+    background-size: 190px 190px;
+}
+#Platabutton {
+    width: 20px;
+    height: 20px;
+    background-image: url("../icons/plata.png");
+    background-size: 15px 15px;
+}
+#silverheader{
+    width: 200px;
+    height: 200px;
+    background-image: url("../icons/plata.png");
+    background-size: 190px 190px;
+}
+#Broncebutton {
+    width: 20px;
+    height: 20px;
+    background-image: url("../icons/bronce.png");
+    background-size: 15px 15px;
+}
+#bronceheader{
+    width: 200px;
+    height: 200px;
+    background-image: url("../icons/bronce.png");
+    background-size: 190px 190px;
+}
+
+/* Estilo para tabla de categorias */
+
+#tablecat {
+    margin-top: 100px;
+    margin-left: 540px;    
+    width: 300px;    
+}
+
+/*Estilo del icono de la pagina*/
+
+#appicon {
+    display: block;
+    float: left;
+    padding: 15px;
+}
+
+/*Estilo de division del icono de la página alineado a la derecha como bloque*/
+
+#logout {
+    display: block;
+    float: left;
+    padding: 25px;
+}
+
+/*Estilo de los botones de acceso a la Tabla de categorias y Tabla general*/
+
+.options {
+    display: block;
+    float: left;
+    margin-top: 25px;
+    margin-left: 250px;
+}
+
+/*Estilo para tamaño de imagen icono de página web*/
+
+#appicon img {
+    width: 70px;
+}
+
+/* Estilo bloque div para mostrar el rol y el usuario*/
+#roleuser {
+    display: block;
+    float: right;
+    margin-right: 30px;
+    padding: 10px;
+}
+
+/* Estilos de la interfaz de ingreso*/
+
+#loginbox {
+    background-color: cornflowerblue;
+    margin-top: 100px;
+    width: 600px;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid black;
+    filter: drop-shadow(0 0 5px black);
+}
+
+#logform {
+    padding: 10px;
+}
+/* Estilo de iconos de la ventana de login*/
+
+.iconlogin {
+    width: 15px;
+}
+/* Estilo de los campos de entrada ventana de login*/
+.inputForm {
+    width: 300px;
+    text-align: center;
+}
+/* Estilo ventana de mantenimiento*/
+#mantenimiento{
+    text-align: center;
+}
