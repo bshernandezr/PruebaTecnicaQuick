@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Tabla General, Rol: Administrador</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../js/printTable.js"></script>
     <script src="../js/getUser.js"></script>
 
@@ -13,7 +14,8 @@
 </head>
 
 <body>
-    <script>       
+    <script>
+        var index = 0;
         $('body').append("<div id='roleuser'><p><b>  Rol: </b> Administrador</p>" +
             "<p><b>Usuario: </b>" + getUser() + "</p></div>");
     </script>
@@ -39,17 +41,18 @@
             </form>
         </div>
     </div>
+    <div style="display: block;" id="indexbutton" align='right'>
+        <button id="antbutton" type="button" class="btn btn-primary">Anterior</button>
+        <button id="sigbutton" onclick="" type="button" class="btn btn-primary">Siguiente</button>
+    </div>
 
-
-
-   
-        <div align='center' id="loading" style="margin-top: 200px;" >
-            <div class="spinner-border" role="status">
-                <span class="sr-only">Loading....</span>
-            </div>
-            <p>Cargando tabla, esto puede tardar unos minutos</p>
+    <div align='center' id="loading" style="margin-top: 200px;">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading....</span>
         </div>
-    
+        <p>Cargando tabla, esto puede tardar unos segundos</p>
+    </div>
+
     <div id="table"></div>
     <script>
         // Cambiamos el atributo action del formulario del cual se pulse el 
@@ -66,7 +69,32 @@
     </script>
     <script>
         // Leemos, organizamos e imprimimos la información usando la función printTable
-        printTable();
+        printTable(index);
+    </script>
+    <script>
+        // Definimos el indice para verificar que datos queremos ver usando el boton siguiente y anterior
+        if (index == 0) {
+            $("#antbutton").hide();
+        }
+        // Usamos el evento click de los botones para definir el indice y a su vez revisamos el rango
+        // de la tabla verificando que no nos salgamos de los indices
+        $("#sigbutton").click(function (event) {
+            index = index + 20;
+            if(index == 8600)
+            {
+                $("#sigbutton").hide();
+            }
+            $("#antbutton").show();
+            printTable(index);
+        }); 
+        $("#antbutton").click(function (event) {
+            index = index - 20;
+            if (index == 0) {
+                $("#antbutton").hide();
+            }
+            $("#sigbutton").show();
+            printTable(index);
+        });        
     </script>
 
 </body>
